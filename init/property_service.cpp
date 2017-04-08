@@ -1244,6 +1244,9 @@ void PropertyLoadBootDefaults() {
     property_initialize_ro_cpu_abilist();
     property_initialize_ro_vendor_api_level();
 
+    // Restore the normal property override security after init extension is executed
+    weaken_prop_override_security = false;
+
     update_sys_usb_config();
 
     // Restore the normal property override security after init extension is executed
